@@ -1,0 +1,29 @@
+mutation RegisterUser {
+  registerUser(
+    input: {
+        clientMutationId: "uniqueId",
+        username: "username",
+        password: "password",
+        email: "user@mail.a"
+    }) {
+    user {
+      jwtAuthToken
+      jwtRefreshToken
+    }
+  }
+}
+
+
+mutation LoginUser {
+  login( input: {
+    clientMutationId: "uniqueId",
+    username: "your_login",
+    password: "your password"
+  } ) {
+    authToken
+    user {
+      id
+      name
+    }
+  }
+}

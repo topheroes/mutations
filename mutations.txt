@@ -1,0 +1,48 @@
+mutation cartAdd{
+  addToCart(input: { productId: 101, quantity: 2, clientMutationId: "200" }){
+    
+    cartItem {
+      quantity
+      subtotal
+      subtotalTax
+      tax
+      total
+    }
+  }
+}
+
+
+
+mutation regCustomer {
+  registerCustomer(input: {clientMutationId: "333", username: "alx33", email: "he33@a.a", password: "200"}) {
+    clientMutationId
+    customer {
+      customerId
+    }
+  }
+}
+
+
+
+query cartCheck {
+  cart {
+    contents {
+      nodes {
+        product {
+          name
+        }
+        quantity
+      }
+    }
+  }
+}
+
+
+mutation create{
+    createOrder(input:{clientMutationId:"100", customerId: 7}){
+    	clientMutationId
+    	order{
+        orderId
+      }
+  }
+}
